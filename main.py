@@ -142,9 +142,9 @@ async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 def main():
-    # application = Application.builder().token("7641581334:AAHXEfIpnXRB_h5YHUpjBFFMnwVSy_I1uek").build()
+    application = Application.builder().token("7641581334:AAHXEfIpnXRB_h5YHUpjBFFMnwVSy_I1uek").build()
     # 测试
-    application = Application.builder().token("7515684358:AAHrGENRadK0N54nbkwDGgDI6V4jgnvhUyA").build()
+    # application = Application.builder().token("7515684358:AAHrGENRadK0N54nbkwDGgDI6V4jgnvhUyA").build()
 
     # 定义对话处理器
     conv_handler = ConversationHandler(
