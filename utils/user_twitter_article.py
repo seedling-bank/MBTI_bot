@@ -15,7 +15,7 @@ async def get_user_twitter_article(user_id: str):
             try:
                 result = await get_user_twitter_data_by_apidance(user_id=user_id)
 
-                if result.get('data').get('user') is not None:
+                if result.get('data').get('user'):
                     return result
             except Exception as e:
                 loguru.logger.error(e)
