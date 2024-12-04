@@ -131,6 +131,7 @@ async def handle_twitter_id(update: Update, context: CallbackContext):
                     result = await get_gpt_translation(user_mbti)
                 else:
                     result = await get_gpt_english_translation(user_mbti)
+                print(result)
                 await update.message.reply_text(result, parse_mode="HTML")
 
 
