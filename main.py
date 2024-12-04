@@ -131,7 +131,7 @@ async def handle_twitter_id(update: Update, context: CallbackContext):
                     result = await get_gpt_translation(user_mbti)
                 else:
                     result = await get_gpt_english_translation(user_mbti)
-                await update.message.reply_text(result)
+                await update.message.reply_text(result, parse_mode="MarkdownV2")
 
 
 async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -141,7 +141,9 @@ async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 def main():
-    application = Application.builder().token("7641581334:AAHXEfIpnXRB_h5YHUpjBFFMnwVSy_I1uek").build()
+    # application = Application.builder().token("7641581334:AAHXEfIpnXRB_h5YHUpjBFFMnwVSy_I1uek").build()
+    # 测试
+    application = Application.builder().token("7515684358:AAHrGENRadK0N54nbkwDGgDI6V4jgnvhUyA").build()
 
     # 定义对话处理器
     conv_handler = ConversationHandler(
