@@ -52,7 +52,7 @@ async def mbti_genai_analysis(data, name):
         who prefer keeping their options open.
 
         请记住分析的结果，要输出的分析报告中要使用这个结果，使用HTML格式,其中只能包含<b>、<i>、<u>、<s>、<a href="">标签，不能
-        使用其他标签，不要使用Markdown格式
+        使用其他标签，在开始不需要有html和'''，不要使用Markdown格式
 
         # 格式
 
@@ -72,7 +72,6 @@ async def mbti_genai_analysis(data, name):
         
         <b>🎉 和{name}有同样MBTI的名人 🎉</b>
         ✨ // 介绍一个相同MBTI的名人，写一句话的内容。
-
         """
         response = model.generate_content(test)
         return response.text
