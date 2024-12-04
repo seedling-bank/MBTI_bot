@@ -275,10 +275,12 @@ async def get_user_twitter_data_by_apidance(user_id: str):
 
 
 async def main():
-    # name = "BillGates"
+    name = "DeAgentAI"
     # user_data = await get_user_twitter_id_by_apidance(name)
+    user_data = await get_user_twitter_id_by_api(name)
+    print(user_data)
 
-    user_id = "50393960"
+    user_id = "1753744475464052736"
     user_data = await get_user_twitter_data_by_apidance(user_id)
     print(user_data)
 

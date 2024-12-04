@@ -10,15 +10,14 @@ from services.twitter_services import get_user_twitter_data_by_apidance
 
 async def get_user_twitter_article(user_id: str):
     try:
-
+        loguru.logger.error(user_id)
         for attempt in range(1, config.conf.settings.MAX_RETRIES + 1):
             try:
                 result = await get_user_twitter_data_by_apidance(user_id=user_id)
-
+                loguru.logger.error(result)
                 if 'errors' in result:
                     await asyncio.sleep(config.conf.settings.DELAY)
-                loguru.logger.error(result)
-                if result.get('data').get('user'):
+                elif result.get('data').get('user'):
                     return result
 
             except Exception as e:

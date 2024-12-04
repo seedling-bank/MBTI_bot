@@ -5,7 +5,7 @@ import traceback
 import loguru
 
 import config.conf
-from services.twitter_services import get_user_twitter_id_by_apidance
+from services.twitter_services import get_user_twitter_id_by_apidance, get_user_twitter_id_by_api
 
 
 async def verify_user_id(user_name: str):
@@ -19,7 +19,7 @@ async def verify_user_id(user_name: str):
 
         for attempt in range(1, config.conf.settings.MAX_RETRIES + 1):
             try:
-                result = await get_user_twitter_id_by_apidance(username=user_name)
+                result = await get_user_twitter_id_by_api(username=user_name)
 
                 if result is not None:
                     return result
