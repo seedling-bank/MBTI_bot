@@ -14,9 +14,13 @@ async def get_user_twitter_article(user_id: str):
         for attempt in range(1, config.conf.settings.MAX_RETRIES + 1):
             try:
                 result = await get_user_twitter_data_by_apidance(user_id=user_id)
+
+                if 'errors' in result:
+                    await asyncio.sleep(config.conf.settings.DELAY)
                 loguru.logger.error(result)
                 if result.get('data').get('user'):
                     return result
+
             except Exception as e:
                 loguru.logger.error(e)
                 loguru.logger.error(traceback.format_exc())

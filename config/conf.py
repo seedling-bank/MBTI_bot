@@ -17,7 +17,7 @@ class Settings(BaseSettings):
     APIDANCE_API_KEY: str = "veyizsgc0f5x4mbl5k4xmajxvkhjex"
 
     MAX_RETRIES: int = 5
-    DELAY: int = 1
+    DELAY: int = 2
 
 
 settings = Settings()
