@@ -99,7 +99,7 @@ async def handle_twitter_id(update: Update, context: CallbackContext):
         return
     else:
         user_success_message = resources.languages.LANGUAGES[user_language]['user_success_message']
-        await update.message.reply_text(f"user_success_message")
+        await update.message.reply_text(user_success_message)
 
         # 继续下一步逻辑（获取twitter数据）
         twitter_data_processing_message = resources.languages.LANGUAGES[user_language]['twitter_data_processing']
