@@ -1,3 +1,5 @@
+import asyncio
+
 import loguru
 from telegram import Update, ReplyKeyboardMarkup, InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardRemove
 from telegram.ext import (
@@ -8,6 +10,7 @@ from telegram.ext import (
     ContextTypes,
     filters, CallbackQueryHandler, CallbackContext,
 )
+import config.conf
 import resources.languages
 from utils.gpt_transactions import get_gpt_translation, get_gpt_china_translation, get_gpt_english_translation
 from utils.user_id_verification import verify_user_id
@@ -108,7 +111,7 @@ async def handle_twitter_id(update: Update, context: CallbackContext):
 
         user_name = user_info.get('user_name')
         user_id = user_info.get('user_id')
-
+        await asyncio.sleep(config.conf.settings.DELAY)
         user_twitter_data = await get_user_twitter_article(user_id=user_id)
         loguru.logger.error(f"user_twitter_data----------------{user_twitter_data}")
         if user_twitter_data is None:
