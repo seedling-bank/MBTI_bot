@@ -14,8 +14,8 @@ async def verify_user_id(user_name: str):
         if user_name.startswith('@'):
             user_name = user_name[1:]
 
-        if not re.fullmatch(r"^[A-Za-z_]+$", user_name):
-            return None
+        if not re.fullmatch(r"^[A-Za-z0-9_]+$", user_name):
+            return {"user_id": None, "user_name": None}
 
         for attempt in range(1, config.conf.settings.MAX_RETRIES + 1):
             try:
@@ -27,7 +27,7 @@ async def verify_user_id(user_name: str):
                 loguru.logger.error(e)
                 loguru.logger.error(traceback.format_exc())
             await asyncio.sleep(config.conf.settings.DELAY)
-        return None
+        return {"user_id": None, "user_name": None}
     except Exception as e:
         loguru.logger.error(e)
         loguru.logger.error(traceback.format_exc())
