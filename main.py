@@ -111,7 +111,7 @@ async def handle_twitter_id(update: Update, context: CallbackContext):
 
         await asyncio.sleep(config.conf.settings.DELAY)
         user_twitter_data = await get_user_twitter_article(user_id=user_info)
-        loguru.logger.error(f"user_twitter_data----------------{user_twitter_data}")
+        # loguru.logger.error(f"user_twitter_data----------------{user_twitter_data}")
         if user_twitter_data is None:
             twitter_data_error_message = resources.languages.LANGUAGES[user_language]['twitter_data_error']
             await update.message.reply_text(twitter_data_error_message)
@@ -120,7 +120,7 @@ async def handle_twitter_id(update: Update, context: CallbackContext):
             await update.message.reply_text(twitter_data_success_message)
 
             user_mbti = await get_user_mbti_analyze(data=user_twitter_data, user_name=twitter_id)
-            loguru.logger.error(f"user_mbti----------------{user_mbti}")
+            # loguru.logger.error(f"user_mbti----------------{user_mbti}")
             if user_mbti is None:
                 mbti_analysis_error_message = resources.languages.LANGUAGES[user_language]['mbti_analysis_error']
                 await update.message.reply_text(mbti_analysis_error_message)
