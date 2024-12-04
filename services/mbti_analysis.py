@@ -51,7 +51,8 @@ async def mbti_genai_analysis(data, name):
         and spotting opportunities. They tend to be flexible, relaxed nonconformists
         who prefer keeping their options open.
 
-        请记住分析的结果，要输出的分析报告中要使用这个结果，使用HTML格式，不要使用Markdown格式
+        请记住分析的结果，要输出的分析报告中要使用这个结果，使用HTML格式,其中只能包含<b>、<i>、<u>、<s>、<a href="">标签，不能
+        使用其他标签，不要使用Markdown格式
 
         # 格式
 
