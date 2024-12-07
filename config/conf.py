@@ -19,5 +19,7 @@ class Settings(BaseSettings):
     MAX_RETRIES: int = 5
     DELAY: int = 5
 
+    DATABASE_URI: str = "mysql+aiomysql://root:mm123123@127.0.0.1:3306/mbti"
+
 
 settings = Settings()

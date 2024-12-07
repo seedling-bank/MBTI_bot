@@ -1,5 +1,4 @@
 import asyncio
-import re
 import traceback
 
 import loguru
@@ -26,13 +25,3 @@ async def get_user_mbti_analyze(data, user_name: str):
         loguru.logger.error(e)
         loguru.logger.error(traceback.format_exc())
         return False
-
-
-async def main():
-    user_name = input("please enter your username: ")
-    result = await get_user_mbti_analyze(user_name)
-    print(result)
-
-
-if __name__ == '__main__':
-    asyncio.run(main())

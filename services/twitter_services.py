@@ -1,14 +1,11 @@
 import asyncio
 import traceback
-import re
 
 import loguru
 import tweepy
 import httpx
 import requests
 import json
-import aiohttp
-from curl_cffi.requests import AsyncSession
 
 import config.conf
 
@@ -143,7 +140,8 @@ async def get_user_twitter_data(name: str, user_id: int):
             headers = {
                 "accept": "*/*",
                 "accept-language": "en,zh-CN;q=0.9,zh;q=0.8",
-                "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
+                "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81"
+                                 "IUq16cHjhLTvJu4FA33AGWWjCpTnA",
                 "content-type": "application/json",
                 "priority": "u=1, i",
                 "referer": f"https://x.com/{name}",
@@ -153,10 +151,13 @@ async def get_user_twitter_data(name: str, user_id: int):
                 "sec-fetch-dest": "empty",
                 "sec-fetch-mode": "cors",
                 "sec-fetch-site": "same-origin",
-                "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-                "x-client-transaction-id": "Qo0w/h0U99f8qSvZ+zwyrMVwk3ETDJfbddEyMa/Ux35Faw3qklJFr/bwxEqmaZqm5MxRvEBk30eUc+V8ngowkHMfHIvVQQ",
+                "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko)"
+                              " Chrome/131.0.0.0 Safari/537.36",
+                "x-client-transaction-id": "Qo0w/h0U99f8qSvZ+zwyrMVwk3ETDJfbddEyMa/Ux35Faw3qklJFr/bwxEqmaZqm5MxRvEB"
+                                           "k30eUc+V8ngowkHMfHIvVQQ",
                 "x-client-uuid": "18ce18cc-8855-430f-8625-c13e20476e14",
-                "x-csrf-token": "03c28837150b045c7822e4341255935df26afad576b1bd30838036e98ccc051ce93f53a2cd9f0ab86a63a69e741fc98d7be9901e6e3e3f8b12fd16285c551191792366ab428f80147cf3ba33ed253641",
+                "x-csrf-token": "03c28837150b045c7822e4341255935df26afad576b1bd30838036e98ccc051ce93f53a2cd9f0ab86a63"
+                                "a69e741fc98d7be9901e6e3e3f8b12fd16285c551191792366ab428f80147cf3ba33ed253641",
                 "x-twitter-active-user": "yes",
                 "x-twitter-auth-type": "OAuth2Session",
                 "x-twitter-client-language": "zh-cn"
@@ -171,7 +172,11 @@ async def get_user_twitter_data(name: str, user_id: int):
                 "twtr_pixel_opt_in": "Y",
                 "_monitor_extras": "{\"deviceId\":\"8yCmrHcyVRXoBMdSG6CZmI\",\"eventId\":2,\"sequenceNumber\":2}",
                 "first_ref": "https%3A%2F%2Fwww.google.com.hk%2F",
-                "ph_phc_bzX9JlZsQjvFToje6i6tSVWZfspK1AUi14i4CzvcNY6_posthog": "%7B%22distinct_id%22%3A%22019256c6-11b0-7764-bd02-b6eff1774932%22%2C%22%24sesid%22%3A%5B1732717078390%2C%2201936df6-5ab7-7f30-b709-7c31a1395d13%22%2C1732716681911%5D%7D",
+                "ph_phc_bzX9JlZsQjvFToje6i6tSVWZfspK1AUi14i4CzvcNY6_posthog": "%7B%22distinct_id%22%3A%22019256c6-11b0-"
+                                                                              "7764-bd02-b6eff1774932%22%2C%22%24sesid"
+                                                                              "%22%3A%5B1732717078390%2C%2201936df6-5a"
+                                                                              "b7-7f30-b709-7c31a1395d13%22%2C17327166"
+                                                                              "81911%5D%7D",
                 "personalization_id": "\"v1_SrwQkfMX45L0z6yoJKQOEw==\"",
                 "lang": "zh-cn",
                 "ads_prefs": "\"HBERAAA=\"",
@@ -179,7 +184,8 @@ async def get_user_twitter_data(name: str, user_id: int):
                 "auth_token": "d3811db7402ba47e8acdd25781a0c6b0831be613",
                 "twid": "u%3D1709536223294017537",
                 "guest_id": "v1%3A173311018921236943",
-                "ct0": "03c28837150b045c7822e4341255935df26afad576b1bd30838036e98ccc051ce93f53a2cd9f0ab86a63a69e741fc98d7be9901e6e3e3f8b12fd16285c551191792366ab428f80147cf3ba33ed253641",
+                "ct0": "03c28837150b045c7822e4341255935df26afad576b1bd30838036e98ccc051ce93f53a2cd9f0ab86a63a69e741fc"
+                       "8d7be9901e6e3e3f8b12fd16285c551191792366ab428f80147cf3ba33ed253641",
                 "guest_id_ads": "v1%3A173311018921236943",
                 "guest_id_marketing": "v1%3A173311018921236943",
                 "amp_56bf9d": "ec9aa7bc-c84d-4d4f-80c6-c392c8593be9...1ie35bgqc.1ie37hj04.e.2r.39"

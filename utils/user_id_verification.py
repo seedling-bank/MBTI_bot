@@ -5,7 +5,7 @@ import traceback
 import loguru
 
 import config.conf
-from services.twitter_services import get_user_twitter_id_by_apidance, get_user_twitter_id_by_api
+from services.twitter_services import get_user_twitter_id_by_api
 
 
 async def verify_user_id(user_name: str):
@@ -15,7 +15,7 @@ async def verify_user_id(user_name: str):
             user_name = user_name[1:]
 
         if not re.fullmatch(r"^[A-Za-z0-9_]+$", user_name):
-            return {"user_id": None, "user_name": None}
+            return None
 
         for attempt in range(1, config.conf.settings.MAX_RETRIES + 1):
             try:
@@ -23,11 +23,13 @@ async def verify_user_id(user_name: str):
 
                 if result is not None:
                     return result
+                else:
+                    return None
             except Exception as e:
                 loguru.logger.error(e)
                 loguru.logger.error(traceback.format_exc())
             await asyncio.sleep(config.conf.settings.DELAY)
-        return {"user_id": None, "user_name": None}
+        return None
     except Exception as e:
         loguru.logger.error(e)
         loguru.logger.error(traceback.format_exc())

@@ -3,7 +3,6 @@ import traceback
 
 import loguru
 
-import openai
 from openai import AsyncOpenAI
 
 from config.conf import settings

@@ -1,6 +1,10 @@
 LANGUAGES = {
     'en': {
         'welcome': "Welcome!",
+        'cancel': 'Verify to cancel',
+        'confirm': 'Verify to confirm',
+        'confirm_button': 'Confirm',
+        'cancel_button': 'Cancel',
         'choose_language': "Please choose your language:",
         'selected_language': "You have selected English.",
         'language_set_success': "Great! You've successfully switched to English.",
@@ -20,10 +24,22 @@ LANGUAGES = {
         'twitter_data_processing': 'We are now processing your Twitter data. Please wait...',
         'twitter_data_error': 'Failed to get twitter data, please try again.',
         'twitter_data_success': 'Successfully obtained twitter data, MBTI analysis in progress...',
-        'mbti_analysis_error': 'MBTI analysis failed, please try again.'
+        'mbti_analysis_error': 'MBTI analysis failed, please try again.',
+        'address_input': 'Please enter your BSC address correctly:',
+        'address_verify_error': 'The address {address} you entered is invalid',
+        'address_verify_success': 'The address {address} you entered is valid',
+        'generate_link': "Generating link",
+        'send_tweet_alerts': 'Please confirm after sending your tweet',
+        'article_link': 'Please click here to publish the article!',
+        'twitter_link_verification': 'Please confirm the following information:\nAddress: {address}\nTwitter link {twitter_url}',
+        'tweet_verification_canceled': 'You have unverified your tweets. To use them again, type /start to get started.'
     },
     'zh': {
         'welcome': "欢迎！",
+        'cancel': '验证已取消',
+        'confirm': '验证已确认',
+        'confirm_button': '确认',
+        'cancel_button': '取消',
         'choose_language': "请选择您的语言：",
         'selected_language': "您已选择中文。",
         'language_set_success': "太好了！您已成功切换到中文。",
@@ -44,9 +60,22 @@ LANGUAGES = {
         'twitter_data_error': '获取 Twitter 数据失败，请重试。',
         'twitter_data_success': '成功获取 Twitter 数据，正在进行 MBTI 分析...',
         'mbti_analysis_error': 'MBTI 分析失败，请重试。',
+        'address_input': '请正确输入您的 BSC 地址：',
+        'address_verify_error': '您输入的地址 {address} 无效',
+        'address_verify_success': '您输入的地址 {address} 有效',
+        'generate_link': "正在生成链接",
+        'send_tweet_alerts': '发送推文后请确认',
+        'twitter_link_verification': '请确认以下信息：\n地址：{address}\nTwitter 链接：{twitter_url}',
+        'article_link': '请点击此处进行文章发布！',
+        'tweet_verification_canceled': '您已取消验证您的推文。如需再次使用，请输入 /start 以开始。'
+
     },
     'vi': {
         'welcome': "Chào mừng!",
+        'cancel': 'Xác minh để hủy',
+        'confirm_button': 'Xác nhận',
+        'cancel_button': 'Hủy',
+        'confirm': 'Xác minh để xác nhận',
         'choose_language': "Vui lòng chọn ngôn ngữ của bạn:",
         'selected_language': "Bạn đã chọn Tiếng Việt.",
         'language_set_success': "Tuyệt vời! Bạn đã chuyển sang Tiếng Việt thành công.",
@@ -67,9 +96,17 @@ LANGUAGES = {
         'twitter_data_error': 'Không thể lấy dữ liệu Twitter, vui lòng thử lại.',
         'twitter_data_success': 'Đã lấy thành công dữ liệu Twitter, đang tiến hành phân tích MBTI...',
         'mbti_analysis_error': 'Phân tích MBTI thất bại, vui lòng thử lại.',
+        'address_input': 'Vui lòng nhập chính xác địa chỉ BSC của bạn:',
+        'address_verify_error': 'Địa chỉ {address} bạn đã nhập không hợp lệ',
+        'address_verify_success': 'Địa chỉ {address} bạn đã nhập hợp lệ',
+        'generate_link': "Đang tạo liên kết",
+        'send_tweet_alerts': 'Vui lòng xác nhận sau khi gửi tweet của bạn',
+        'article_link': 'Vui lòng nhấp vào đây để đăng bài viết!',
+        'twitter_link_verification': 'Vui lòng xác nhận thông tin sau:\nĐịa chỉ: {address}\nLiên kết Twitter: {twitter_url}',
+        'tweet_verification_canceled': 'Bạn đã hủy xác minh tweet của mình. Để sử dụng lại, hãy nhập /start để bắt đầu.'
+
     },
 }
-
 
 LANGUAGE_OPTIONS = {
     'English': 'en',

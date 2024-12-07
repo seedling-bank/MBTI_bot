@@ -1,0 +1,30 @@
+{
+    "Short_Long":[
+{"Q" : "Are you willing to 'HODL' your favorite cryptocurrency even if its price has plummeted by 90%?" ,"P":1},
+{"Q" : "Are you hoping to achieve super-wealth through your wild trading in the short term?","P":-1},
+{"Q" : "Do you always holding some tokens for more than a year?","P":1},
+{"Q" : "Even if token price haven't hit your long-term target, would you still choose to close your position for profits?" ,"P":-1},
+{"Q" : "Are you willing to HODL your tokens for over five years ?","P":1}
+    ],
+    "conservatism_aggressive":[
+        {"Q" : "Do you prefer trading contracts with high (20~1000x) leverage over spot trading?","P":1},
+        {"Q" : "Would you go more than half of your portfolio to meme tokens?","P":1},
+        {"Q" : "Are you okay with the possibility of your assets going to zero, all in pursuit of potential financial freedom?","P":1},
+        {"Q" : "Would you consider taking out a loan to make an investment? ","P":1},
+        {"Q" : "Can you stomach your portfolio being down by more than 10%?","P":-1}
+    ],
+    "Rational_Emotional":[
+        {"Q" : "You often have strong emotions in trading ?","P":1},
+        {"Q" : "Do you believe market sentiment and chart patterns are more significant than fundamental analysis?","P":1},
+        {"Q" : "Do you often find yourself succumbing to FOMO (Fear of Missing Out) emotions?","P":1},
+        {"Q" : "Do you believe that quantitative trading can significantly increase the probability of generating positive investment returns for you?","P":-1},
+        {"Q" : "After reaching the stop-loss point, do you strictly adhere to it?","P":-1}
+    ],
+    "Player_Banker":[
+        {"Q" : "Would you be willing to manipulate others' emotions for profit?","P":1},
+        {"Q" : "Do you know a lot of the tricks used by market manipulators?","P":1},
+        {"Q" : "Would you buy some token just because someone told you to buy, even if you have no idea what the project is about?","P":-1},
+        {"Q" : "Do you believe that token prices are typically correlated with fundamental factors?","P":-1},
+        {"Q" : "Would you continue trading in this market even if there are significant losses in the short term?","P":1}
+    ]
+}
