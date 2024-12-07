@@ -19,7 +19,10 @@ class Settings(BaseSettings):
     MAX_RETRIES: int = 5
     DELAY: int = 5
 
-    DATABASE_URI: str = "mysql+aiomysql://root:mm123123@127.0.0.1:3306/mbti"
+    # 测试环境
+    # DATABASE_URI: str = "mysql+aiomysql://root:mm123123@127.0.0.1:3306/mbti"
+    # 正式环境
+    DATABASE_URI: str = "mysql+aiomysql://rcb:cryptoBricks123@cb-rds.cw5tnk9dgstt.us-west-2.rds.amazonaws.com:3306/mbti"
 
 
 settings = Settings()
