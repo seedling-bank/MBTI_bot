@@ -1,0 +1,15 @@
+{
+  "name": "SCEP NFT #TOKEN_ID",
+  "description": "This is my SoulBound NFT",
+  "image": "https://salmon-just-kangaroo-237.mypinata.cloud/ipfs/QmTyh5mHd9fGJmJHjEQiMtWKVWUs2Mzj1FpM7ydPaSAsq8",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Red"
+    }
+  ]
+}

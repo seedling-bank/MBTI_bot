@@ -1,0 +1,15 @@
+{
+  "name": "LAEP NFT #TOKEN_ID",
+  "description": "This is my SoulBound NFT",
+  "image": "https://salmon-just-kangaroo-237.mypinata.cloud/ipfs/QmQFpWULwFRaCTeAExgfLwrmEEPzjUyUx5MhxFZxVFqhvR",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Red"
+    }
+  ]
+}

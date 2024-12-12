@@ -1,0 +1,15 @@
+{
+  "name": "SAEP NFT #TOKEN_ID",
+  "description": "This is my SoulBound NFT",
+  "image": "https://salmon-just-kangaroo-237.mypinata.cloud/ipfs/QmVRUhqYGf2oih7jdENp8wZhcHf8mYLuedZmrqe2aQBAXA",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Red"
+    }
+  ]
+}

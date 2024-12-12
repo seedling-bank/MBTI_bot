@@ -337,13 +337,13 @@ async def handle_twitter_id(update: Update, context: CallbackContext):
                 if user_twitter_data is None:
                     twitter_data_error_message = resources.languages.LANGUAGES[user_language]['twitter_data_error']
                     await update.message.reply_text(twitter_data_error_message)
-                    return
+                    return ConversationHandler.END
                 else:
                     # 插入用户的twitter数据
                     user_tweet = await update_user_twitter(telegram_id=telegram_id, twitter_id=user_info,
                                                            user_tweets=user_twitter_data)
                     if user_tweet is None:
-                        return
+                        return ConversationHandler.END
                     else:
 
                         twitter_data_success_message = resources.languages.LANGUAGES[user_language][
@@ -355,7 +355,7 @@ async def handle_twitter_id(update: Update, context: CallbackContext):
                             mbti_analysis_error_message = resources.languages.LANGUAGES[user_language][
                                 'mbti_analysis_error']
                             await update.message.reply_text(mbti_analysis_error_message)
-                            return
+                            return ConversationHandler.END
                         else:
                             if user_language == 'zh':
                                 result = await get_gpt_china_translation(user_mbti)
@@ -408,13 +408,13 @@ async def handle_twitter_id(update: Update, context: CallbackContext):
                 if user_twitter_data is None:
                     twitter_data_error_message = resources.languages.LANGUAGES[user_language]['twitter_data_error']
                     await update.message.reply_text(twitter_data_error_message)
-                    return
+                    return ConversationHandler.END
                 else:
                     # 插入用户的twitter数据
                     user_tweet = await update_user_twitter(telegram_id=telegram_id, twitter_id=user_info,
                                                            user_tweets=user_twitter_data)
                     if user_tweet is None:
-                        return
+                        return ConversationHandler.END
                     else:
 
                         twitter_data_success_message = resources.languages.LANGUAGES[user_language][

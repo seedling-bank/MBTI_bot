@@ -1,0 +1,15 @@
+{
+  "name": "LCRB NFT #TOKEN_ID",
+  "description": "This is my SoulBound NFT",
+  "image": "https://salmon-just-kangaroo-237.mypinata.cloud/ipfs/QmWKnZyhpKdmVrjzmMDxiKuhFQ1C2fJAGdavqoC5tzzxbK",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Red"
+    }
+  ]
+}
